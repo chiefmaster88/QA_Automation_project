@@ -1,27 +1,7 @@
 import pytest
-
-class User:
-    def __init__(self):
-        self.name = None
-        self.second_name = None
-
-
-    def create(self):
-        self.name = 'Ivan'
-        self.second_name = 'Hrytsyna'
-
-    def remove(self):
-        self.name = ' '
-        self.second_name = ' '
+from modules.apiclients.github import GitHhub
 
 @pytest.fixture
-def user():
-    user = User()
-    user.create()
-
-    yield user
-
-    user.remove()
-
-
-
+def  github_api():
+    obj = GitHhub()
+    yield obj
