@@ -26,3 +26,4 @@ def test_repo_can_be_found(github_api):
 def test_repo_cannot_be_found(github_api):
     repo = github_api.search_repo('sergiibutenko_repo_non_exist')
     assert repo['total_count'] == 0
+
